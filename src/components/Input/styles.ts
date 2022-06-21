@@ -1,6 +1,8 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
-export const Container = styled.div`
+import type { InputContainerStyleProps } from "./types";
+
+export const Container = styled.div<InputContainerStyleProps>`
   display: flex;
   align-items: center;
 
@@ -21,15 +23,15 @@ export const Container = styled.div`
     line-height: 36px;
   }
 
-  ${props =>
-    props.isFocused &&
+  ${({ isFilled }) =>
+    isFilled &&
     css`
       color: #ff9000;
       border-color: #ff9000;
     `}
 
-  ${props =>
-    props.isFilled &&
+  ${({ isFilled }) =>
+    isFilled &&
     css`
       color: #ff9000;
     `}
